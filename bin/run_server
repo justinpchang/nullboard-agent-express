@@ -1,0 +1,11 @@
+#! /usr/bin/env node
+
+const express = require("express");
+const app = express();
+app.use(require("../lib/agent.js"));
+
+app.listen(10001, () => {
+  console.log(
+    "Started nullboard agent. Local backup directory is at /opt/nullboard-agent. Listening on port 10001..."
+  );
+});
