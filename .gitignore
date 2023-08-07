@@ -130,4 +130,5 @@ dist
 .pnp.*
 
 dev-agent/
+nullboard-agent/
 release/
