@@ -20,6 +20,10 @@ This will install `nullboard-agent` globally so that it may be run from the comm
 
     brew install nullboard-agent
 
+## Usage
+
+- Agent runs local backup server on port 10001
+- Agent uses `/opt/nullboard-agent` as the backup directory
 
 ## License
 
