@@ -1,0 +1,61 @@
+#! /usr/bin/env node
+
+"use strict";
+
+var express = require("express"),
+  portfinder = require("portfinder"),
+  agent = require("../lib/agent.js"),
+  { getToken } = require("../lib/token.js"),
+  { BASE_PATH } = require("../lib/constants.js");
+
+var argv = require("minimist")(process.argv.slice(2));
+
+process.title = "nullboard-agent";
+
+if (argv.h || argv.help) {
+  console.log(
+    [
+      "usage: nullboard-agent [command] [options]",
+      "",
+      "commands:",
+      "  token        Print the token that the server is using.",
+      "  server       Run the server.",
+      "",
+      "options:",
+      "  -p --port    Port to use. If 0, look for open port. [10001]",
+    ].join("\n")
+  );
+  process.exit();
+}
+
+switch (argv._[0]) {
+  case "token":
+    console.log(getToken());
+    process.exit();
+  case "server":
+    var app = express();
+    app.use(agent);
+
+    function listen(port) {
+      app.listen(port, () => {
+        console.log(
+          `Started nullboard agent. Token is ${getToken()}. Backup directory is at ${BASE_PATH}. Listening on port ${port}...`
+        );
+      });
+    }
+
+    var port = argv.p || argv.port;
+    if (port) {
+      listen(port);
+    } else {
+      portfinder.basePort = 10001;
+      portfinder.getPort(function (err, port) {
+        if (err) throw err;
+        listen(port);
+      });
+    }
+    break;
+  default:
+    console.error("Unknown command");
+    process.exit();
+}

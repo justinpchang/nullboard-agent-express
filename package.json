@@ -30,6 +30,8 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "fs-extra": "^11.1.1",
+    "minimist": "^1.2.8",
+    "portfinder": "^1.0.32",
     "uuid": "^9.0.0"
   },
   "engines": {
@@ -44,8 +46,7 @@
   },
   "license": "BSD-2-Clause",
   "bin": {
-    "nullboard-agent": "./bin/run_server",
-    "nullboard-agent-token": "./bin/get_token"
+    "nullboard-agent": "./bin/nullboard-agent"
   },
   "pkg": {
     "targets": [
