@@ -16,9 +16,9 @@ Using `npx` you can run the script without installing it first:
 
 This will install `nullboard-agent` globally so that it may be run from the command line anywhere.
 
-#### Globally via Homebrew (pending):
+#### Globally via Homebrew:
 
-    brew install nullboard-agent
+    brew tap justinpchang/nullboard-agent
 
 ## Usage:
 
