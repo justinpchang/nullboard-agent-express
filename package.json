@@ -1,6 +1,6 @@
 {
   "name": "nullboard-agent-express",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Local backup agent for Nullboard powered by Express.js",
   "main": "./lib/agent.js",
   "repository": {
