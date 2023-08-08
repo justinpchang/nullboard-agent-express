@@ -1,5 +1,7 @@
 ## Nullboard Agent Express Port
 
+[![npm version](https://badge.fury.io/js/nullboard-agent-express.svg)](https://badge.fury.io/js/nullboard-agent-express)
+
 This is a repo with the source code for a port of [Nullboard Agent (C++, Windows only)](https://github.com/apankrat/nullboard-agent) written in Express.js. See that repo for more details about Nullboard backups or the Nullboard project in general.
 
 ## Installation:
