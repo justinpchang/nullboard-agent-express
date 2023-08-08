@@ -2,8 +2,6 @@
 
 "use strict";
 
-console.log("debug: starting nullboard-agent");
-
 var express = require("express"),
   portfinder = require("portfinder"),
   agent = require("../lib/agent.js"),
